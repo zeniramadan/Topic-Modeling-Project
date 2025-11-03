@@ -6,6 +6,11 @@
    <a href="#"><img src="https://img.shields.io/badge/pandas-1.x-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /></a>
    <a href="#"><img src="https://img.shields.io/badge/NumPy-1.x-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /></a>
    <a href="#"><img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white" alt="Matplotlib" /></a>
+      <a href="#"><img src="https://img.shields.io/badge/Seaborn-4C9BD6?style=for-the-badge" alt="Seaborn" /></a>
+      <a href="#"><img src="https://img.shields.io/badge/NLTK-85C1E9?style=for-the-badge" alt="NLTK" /></a>
+      <a href="#"><img src="https://img.shields.io/badge/Sastrawi-28A745?style=for-the-badge" alt="Sastrawi" /></a>
+      <a href="#"><img src="https://img.shields.io/badge/WordCloud-2C3E50?style=for-the-badge" alt="WordCloud" /></a>
+      <a href="#"><img src="https://img.shields.io/badge/re%20(regex)-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="re (regex)" /></a>
 </p>
 
 Proyek ini mengeksplorasi topik-topik tersembunyi pada judul berita berbahasa Indonesia menggunakan teknik Topic Modeling. Kami memproses teks (normalisasi, tokenisasi, stopword removal, stemming), mengubahnya menjadi representasi numerik (TF‑IDF), lalu mengekstrak topik menggunakan Latent Dirichlet Allocation (LDA). Hasilnya divisualisasikan dalam tabel kata kunci, bar chart, word cloud per topik, serta proyeksi t‑SNE.
@@ -76,7 +81,7 @@ Langkah cepat:
     Karena proyek ini menggunakan Jupyter Notebook dan *library* Python, Anda perlu menginstal dependensi yang diperlukan.  Asumsikan kebutuhan `pip`:
 
     ```powershell
-    pip install jupyter pandas numpy scikit-learn nltk Sastrawi matplotlib seaborn wordcloud
+    pip install jupyter pandas numpy scikit-learn nltk Sastrawi matplotlib seaborn wordcloud re
     ```
 
     Pastikan Anda memiliki Python dan pip terinstal. Jika belum, Anda dapat mengunduhnya dari [https://www.python.org/](https://www.python.org/).  Anda mungkin perlu menginstal NLTK data juga:
@@ -113,6 +118,7 @@ Lalu jalankan sel dari atas ke bawah di `Kelompok_2_TM.ipynb`. Pastikan `file_pa
 - NLP: NLTK, Sastrawi 🔤
 - Fitur & Model: scikit-learn (TF‑IDF, LDA, TruncatedSVD, TSNE) 🤖
 - Visualisasi: Matplotlib, Seaborn, WordCloud 📈
+- Utilitas Teks: re (regex) 🧩
 - Notebook: Jupyter 📓
 
 ## 📝 Catatan & Tips
@@ -121,6 +127,8 @@ Lalu jalankan sel dari atas ke bawah di `Kelompok_2_TM.ipynb`. Pastikan `file_pa
 - Untuk LDA, `CountVectorizer` sering kali cocok; di proyek ini digunakan TF‑IDF dan tetap bekerja baik
 - Jika memori terbatas, hindari `toarray()` pada matriks sparse (gunakan pipeline SVD → t‑SNE seperti di notebook)
 
----
 
-Jika ada kebutuhan khusus (mis. integrasi dengan aplikasi, ekspor hasil topik, atau evaluasi tambahan), silakan buka isu atau sampaikan masukan Anda.
+## 👥 Project Team 2
+- 10222017 Zeni Ramadan
+- 10222000 Ai Hamidah
+- 10222000 Abdul Ropi
