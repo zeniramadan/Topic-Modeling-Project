@@ -1,10 +1,12 @@
 # 📰 Topic Modeling Judul Berita Indonesia
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-%23F37626?style=for-the-badge&logo=jupyter&logoColor=white)](#) </a>
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](#)
-[![pandas](https://img.shields.io/badge/pandas-1.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](#)
-[![NumPy](https://img.shields.io/badge/NumPy-1.x-013243?style=for-the-badge&logo=numpy&logoColor=white)](#)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)](#)
+<p align="center">
+   <a href="#"><img src="https://img.shields.io/badge/Jupyter%20Notebook-%23F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Notebook" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/pandas-1.x-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/NumPy-1.x-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white" alt="Matplotlib" /></a>
+</p>
 
 Proyek ini mengeksplorasi topik-topik tersembunyi pada judul berita berbahasa Indonesia menggunakan teknik Topic Modeling. Kami memproses teks (normalisasi, tokenisasi, stopword removal, stemming), mengubahnya menjadi representasi numerik (TF‑IDF), lalu mengekstrak topik menggunakan Latent Dirichlet Allocation (LDA). Hasilnya divisualisasikan dalam tabel kata kunci, bar chart, word cloud per topik, serta proyeksi t‑SNE.
 
