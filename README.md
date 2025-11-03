@@ -1,6 +1,5 @@
 # 📰 Topic Modeling Judul Berita Indonesia
-
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-%23F37626?style=for-the-badge&logo=jupyter&logoColor=white)](#)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-%23F37626?style=for-the-badge&logo=jupyter&logoColor=white)](#) </a>
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](#)
 [![pandas](https://img.shields.io/badge/pandas-1.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](#)
@@ -31,29 +30,33 @@ Topic-Modeling-Project/
 ## 🧭 Alur Pengerjaan
 
 1. Data Understanding
-	- Memuat `./dataset/indonesian-news-title.csv`
-	- Cek jumlah baris, panjang judul, duplikasi judul, nilai kosong
-	- (Opsional) Visualisasi distribusi kategori dan word cloud keseluruhan
+
+   - Memuat `./dataset/indonesian-news-title.csv`
+   - Cek jumlah baris, panjang judul, duplikasi judul, nilai kosong
+   - (Opsional) Visualisasi distribusi kategori dan word cloud keseluruhan
 
 2. Text Processing
-	- Normalisasi: lowercase, hapus angka dan tanda baca, trim spasi
-	- Tokenisasi: `nltk.word_tokenize`
-	- Stopword Removal: Sastrawi + daftar stopword kustom (mis. `yg`, `dg`, `rt`, `ke`, `di`, `rp`, dll.)
-	- Stemming: Sastrawi (`StemmerFactory`)
-	- Catatan: stemming paling lambat; gunakan sampling data untuk eksperimen cepat
+
+   - Normalisasi: lowercase, hapus angka dan tanda baca, trim spasi
+   - Tokenisasi: `nltk.word_tokenize`
+   - Stopword Removal: Sastrawi + daftar stopword kustom (mis. `yg`, `dg`, `rt`, `ke`, `di`, `rp`, dll.)
+   - Stemming: Sastrawi (`StemmerFactory`)
+   - Catatan: stemming paling lambat; gunakan sampling data untuk eksperimen cepat
 
 3. Vektorisasi
-	- TF‑IDF: `TfidfVectorizer(max_df=0.95, min_df=2, max_features=1000)`
+
+   - TF‑IDF: `TfidfVectorizer(max_df=0.95, min_df=2, max_features=1000)`
 
 4. Topic Modeling (LDA)
-	- Model: `LatentDirichletAllocation(n_components=NUM_TOPICS, learning_method='online', random_state=42)`
-	- Default `NUM_TOPICS = 10` (silakan sesuaikan)
+
+   - Model: `LatentDirichletAllocation(n_components=NUM_TOPICS, learning_method='online', random_state=42)`
+   - Default `NUM_TOPICS = 10` (silakan sesuaikan)
 
 5. Visualisasi Hasil
-	- Tabel kata teratas per topik (Top‑N words)
-	- Bar chart kata teratas per topik
-	- Word cloud per topik (hingga 6 topik pertama secara default)
-	- t‑SNE 2D (setelah reduksi dimensi dengan `TruncatedSVD(n_components=50)`), diwarnai berdasarkan `category` bila tersedia
+   - Tabel kata teratas per topik (Top‑N words)
+   - Bar chart kata teratas per topik
+   - Word cloud per topik (hingga 6 topik pertama secara default)
+   - t‑SNE 2D (setelah reduksi dimensi dengan `TruncatedSVD(n_components=50)`), diwarnai berdasarkan `category` bila tersedia
 
 ## 🚀 Cara Menjalankan (Windows/PowerShell)
 
@@ -61,30 +64,35 @@ Disarankan membuat virtual environment agar dependensi terisolasi.
 
 Langkah cepat:
 
-1) Buat dan aktifkan environment
+1.  **Clone repositori:**
+    ```bash
+    git clone https://github.com/zeniramadan/Topic-Modeling-Project
+    ```
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
+2.  **Install dependensi:**
 
-2) Install dependensi utama
+    Karena proyek ini menggunakan Jupyter Notebook dan *library* Python, Anda perlu menginstal dependensi yang diperlukan.  Asumsikan kebutuhan `pip`:
 
-```powershell
-pip install jupyter pandas numpy scikit-learn nltk Sastrawi matplotlib seaborn wordcloud
-```
+    ```powershell
+    pip install jupyter pandas numpy scikit-learn nltk Sastrawi matplotlib seaborn wordcloud
+    ```
 
-3) Unduh resource NLTK yang diperlukan (opsional bila belum pernah)
+    Pastikan Anda memiliki Python dan pip terinstal. Jika belum, Anda dapat mengunduhnya dari [https://www.python.org/](https://www.python.org/).  Anda mungkin perlu menginstal NLTK data juga:
+        ```python
+        import nltk
+        nltk.download('stopwords')
+        nltk.download('punkt')
+        ```
 
-```powershell
-python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
-```
+3. **Jalankan proyek:**
 
-4) Buka notebook di Jupyter atau VS Code
+    Buka *notebook* Jupyter atau VSCode:
 
-```powershell
-jupyter notebook
-```
+    ```bash
+    Kelompok_2_TM.ipynb
+    ```
+
+    Kemudian, jalankan sel-sel dalam *notebook* untuk menjalankan analisis *topic modeling*.
 
 Lalu jalankan sel dari atas ke bawah di `Kelompok_2_TM.ipynb`. Pastikan `file_path` di notebook menunjuk ke `./dataset/indonesian-news-title.csv`.
 
@@ -110,14 +118,6 @@ Lalu jalankan sel dari atas ke bawah di `Kelompok_2_TM.ipynb`. Pastikan `file_pa
 - Stemming Sastrawi cukup lambat pada dataset besar; gunakan sampling saat eksplorasi awal
 - Untuk LDA, `CountVectorizer` sering kali cocok; di proyek ini digunakan TF‑IDF dan tetap bekerja baik
 - Jika memori terbatas, hindari `toarray()` pada matriks sparse (gunakan pipeline SVD → t‑SNE seperti di notebook)
-
-## 🔭 Ide Pengembangan Lanjutan
-
-- Coba `CountVectorizer` untuk LDA dan bandingkan hasilnya
-- Tambahkan metrik kualitas topik (coherence) dan/atau perplexity
-- Gunakan model alternatif: NMF, BERTopic
-- Tambahkan visualisasi interaktif (mis. pyLDAvis)
-- Buat `requirements.txt` untuk reproduksi yang lebih mudah
 
 ---
 
