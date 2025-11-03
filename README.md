@@ -73,7 +73,7 @@ Langkah cepat:
 
 1.  **Clone repositori:**
     ```bash
-    git clone https://github.com/zeniramadan/Topic-Modeling-Project
+    git clone https://github.com/zeniramadan/Topic-Modeling-Project.git
     ```
 
 2.  **Install dependensi:**
