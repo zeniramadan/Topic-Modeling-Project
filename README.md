@@ -6,23 +6,23 @@
    <a href="#"><img src="https://img.shields.io/badge/pandas-1.x-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /></a>
    <a href="#"><img src="https://img.shields.io/badge/NumPy-1.x-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /></a>
    <a href="#"><img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white" alt="Matplotlib" /></a>
-      <a href="#"><img src="https://img.shields.io/badge/Seaborn-4C9BD6?style=for-the-badge" alt="Seaborn" /></a>
-      <a href="#"><img src="https://img.shields.io/badge/NLTK-85C1E9?style=for-the-badge" alt="NLTK" /></a>
-      <a href="#"><img src="https://img.shields.io/badge/Sastrawi-28A745?style=for-the-badge" alt="Sastrawi" /></a>
-      <a href="#"><img src="https://img.shields.io/badge/WordCloud-2C3E50?style=for-the-badge" alt="WordCloud" /></a>
-      <a href="#"><img src="https://img.shields.io/badge/re%20(regex)-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="re (regex)" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/Seaborn-4C9BD6?style=for-the-badge" alt="Seaborn" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/NLTK-85C1E9?style=for-the-badge" alt="NLTK" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/Sastrawi-28A745?style=for-the-badge" alt="Sastrawi" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/WordCloud-2C3E50?style=for-the-badge" alt="WordCloud" /></a>
+   <a href="#"><img src="https://img.shields.io/badge/re%20(regex)-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="re (regex)" /></a>
 </p>
 
-Proyek ini mengeksplorasi topik-topik tersembunyi pada judul berita berbahasa Indonesia menggunakan teknik Topic Modeling. Kami memproses teks (normalisasi, tokenisasi, stopword removal, stemming), mengubahnya menjadi representasi numerik (TF‑IDF), lalu mengekstrak topik menggunakan Latent Dirichlet Allocation (LDA). Hasilnya divisualisasikan dalam tabel kata kunci, bar chart, word cloud per topik, serta proyeksi t‑SNE.
+Proyek ini mengeksplorasi topik-topik tersembunyi pada judul berita berbahasa Indonesia menggunakan teknik Topic Modeling. Kami memproses teks (normalisasi, tokenisasi, stopword removal, stemming, lemitization), mengubahnya menjadi representasi numerik (TF‑IDF), lalu mengekstrak topik menggunakan Latent Dirichlet Allocation (LDA). Hasilnya divisualisasikan dalam tabel kata kunci, bar chart, word cloud per topik, serta proyeksi t‑SNE.
 
 ## ✨ Ringkasan
 
-- Dataset: `dataset/indonesian-news-title.csv` (berisi kolom judul berita; jika nama kolom `tittle`, notebook akan menggantinya menjadi `title`. Terdapat kolom `category` jika tersedia.)
+- Dataset: `dataset/indonesian-news-title.csv` (berisi kolom `date`, `url`, `title`, dan `category`.)
 - Pemrosesan Teks: normalisasi (lowercase, hapus angka & tanda baca), tokenisasi NLTK, stopword Bahasa Indonesia (Sastrawi + daftar kustom), stemming (Sastrawi)
 - Vektorisasi: TF‑IDF (`max_df=0.95`, `min_df=2`, `max_features=1000`)
 - Model: LDA (scikit‑learn) dengan `NUM_TOPICS=10`, `learning_method='online'`, `random_state=42`
 - Visualisasi: distribusi kategori, word cloud keseluruhan, tabel kata teratas per topik, bar chart kata teratas per topik, word cloud per topik, t‑SNE (setelah reduksi dimensi dengan TruncatedSVD)
-- Performa: secara default memproses sampel 500 baris untuk mempercepat (stemming Sastrawi relatif lambat); bisa dinaikkan sesuai kebutuhan
+- Performa: secara default memproses sampel `500` baris untuk mempercepat (stemming Sastrawi relatif lambat); bisa dinaikkan sesuai kebutuhan
 
 ## 📂 Struktur Repository
 
